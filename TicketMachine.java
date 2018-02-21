@@ -22,6 +22,9 @@ public class TicketMachine
     
     private int saving;
     
+    private int sacar;
+    private int cambio;
+    private int extraer;
     /**
      * Create a machine that issues tickets of the given price.
      */
@@ -37,16 +40,19 @@ public class TicketMachine
      */
     
     public int emptyMachine(){
-        int sacar;
-        int cambio;
-        int TotalyBalance;
+        if (balance == 0) {
+        
         cambio = balance;
         sacar = total;
-        TotalyBalance = sacar+cambio;
+        extraer = sacar+cambio;
         total=0;
         balance=0;
-        return TotalyBalance;
         
+    }else {
+        System.out.println("espere a que la maquina termine de realizar procesos");
+        System.out.println("-1");
+    }
+    return extraer;
     }
     public int getPrice()
     {
